@@ -1,0 +1,66 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* Basic styling for header and sections */
+header {
+    background-color: #000000;
+    color: #b006b9;
+    text-align: center;
+    padding: 20px;
+}
+
+section {
+    margin: 20px;
+}
+
+/* Add more CSS styles to format your content as needed */
+
+
+/* Hide the header by default */
+header.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Style the header when it's visible */
+header.visible {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Define the rolling text class */
+.rolling-text {
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Define the animation with a 50% faster duration */
+.rolling-text span {
+    display: inline-block;
+    animation: roll-in 1.25s ease-in-out forwards; /* 2.5s / 2 = 1.25s */
+}
+
+/* Keyframes for the animation */
+@keyframes roll-in {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+
+
+
+
