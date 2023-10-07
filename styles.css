@@ -1,11 +1,17 @@
-/* Reset some default styles */
-body, h1, h2, p {
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-
+    /* Apply a background image to the body */
+    background-image: url('giphy.gif'); /* Replace with your GIF file name */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff; /* Set text color for readability */
 }
 
-/* Basic styling for header and sections */
+/* Header Styles */
 header {
     background-color: #000000;
     color: #b006b9;
@@ -13,54 +19,129 @@ header {
     padding: 20px;
 }
 
-section {
-    margin: 20px;
+/* Footer Styles */
+footer {
+    background-color: #000000;
+    color: #b006b9;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Add more CSS styles to format your content as needed */
+/* Make links bright blue */
+a {
+    color: #f069f9; /* Bright blue color for links */
+    text-decoration: none; /* Remove underline by default */
+    font-weight: bold; /* Make the links bold */
+}
 
+/* Change link color when hovered */
+a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
 
-/* Hide the header by default */
-header.hidden {
+/* Social Media Menu Styles */
+.menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    z-index: 999;
+}
+
+.toggle {
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.social-icons li {
+    margin-right: 10px;
+    animation: fadeIn 0.5s var(--i) forwards;
+}
+
+.social-icons li a {
+    text-decoration: none;
+    color: var(--clr);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Style the button */
+#popup-button {
+    background-color: #650183;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Style the popup menu container */
+#popup-menu {
     display: none;
-    opacity: 0;
-    transform: translateY(-50px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    position: absolute;
+    top: 80px; /* Adjust the distance from the button as needed */
+    right: 20px;
+    background-color: #000000;
+    box-shadow: 0 2px 4px rgba(138, 0, 180, 0.2);
+    z-index: 999;
 }
 
-/* Style the header when it's visible */
-header.visible {
+/* Style the menu items */
+#popup-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#popup-menu ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+#popup-menu ul li a {
+    text-decoration: none;
+    color: #c500f7;
     display: block;
-    opacity: 1;
-    transform: translateY(0);
 }
 
-/* Define the rolling text class */
-.rolling-text {
-    width: 100%;
-    height: 50px;
-    overflow: hidden;
-    white-space: nowrap;
+#popup-menu ul li a:hover {
+    background-color: #56035b;
+    color: #fff;
 }
 
-/* Define the animation with a 50% faster duration */
-.rolling-text span {
-    display: inline-block;
-    animation: roll-in 1.25s ease-in-out forwards; /* 2.5s / 2 = 1.25s */
-}
-
-/* Keyframes for the animation */
-@keyframes roll-in {
-    0% {
-        transform: translateX(100%);
+/* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+    /* Adjust styles for smaller screens */
+    footer {
+        position: static; /* Reset the position */
     }
-    100% {
-        transform: translateX(0);
+    
+    /* Center the social media menu for mobile */
+    .menu {
+        right: 50%; /* Center horizontally */
+        transform: translateX(50%); /* Center horizontally */
+    }
+
+    /* Adjust the popup menu position for mobile */
+    #popup-menu {
+        top: 60px; /* Adjust the distance from the button for mobile */
+        right: 10px; /* Adjust the right distance for mobile */
     }
 }
-
-
-
-
-
-
